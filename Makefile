@@ -1,8 +1,8 @@
 CC=cc
 CFLAGS=-O -I../.. -DHAVE_AES
 
-UNZ_OBJS = miniunz.o unzip.o ioapi.o ../../libz.a libaes.a
-ZIP_OBJS = minizip.o zip.o   ioapi.o ../../libz.a libaes.a
+UNZ_OBJS = miniunz.o unzip.o ioapi.o libaes.a
+ZIP_OBJS = minizip.o zip.o   ioapi.o libaes.a
 TEST_FILES = test.zip readme.old readme.txt
 
 .c.o:
@@ -14,10 +14,10 @@ libaes.a:
 	cd aes; $(MAKE) $(MFLAGS)
 
 miniunz:  $(UNZ_OBJS) libaes.a
-	$(CC) $(CFLAGS) -o $@ $(UNZ_OBJS)
+	$(CC) $(CFLAGS) -o $@ $(UNZ_OBJS) -lz
 
 minizip:  $(ZIP_OBJS) libaes.a
-	$(CC) $(CFLAGS) -o $@ $(ZIP_OBJS)
+	$(CC) $(CFLAGS) -o $@ $(ZIP_OBJS) -lz
 
 .PHONY: test clean
 
