@@ -173,3 +173,7 @@ void fill_zlib_filefunc64_32_def_from_filefunc32 OF((zlib_filefunc64_32_def* p_f
 #endif
 
 #endif
+
+#ifndef OF
+#define OF(x) _Z_OF(x)
+#endif
