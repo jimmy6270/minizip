@@ -94,6 +94,10 @@ extern "C" {
 #  endif
 #endif
 
+#ifndef OF
+#define OF(x) _Z_OF(x)
+#endif
+
 typedef voidpf   (ZCALLBACK *open_file_func)      OF((voidpf opaque, const char* filename, int mode));
 typedef voidpf   (ZCALLBACK *opendisk_file_func)  OF((voidpf opaque, voidpf stream, int number_disk, int mode));
 typedef uLong    (ZCALLBACK *read_file_func)      OF((voidpf opaque, voidpf stream, void* buf, uLong size));
@@ -172,8 +176,4 @@ void fill_zlib_filefunc64_32_def_from_filefunc32 OF((zlib_filefunc64_32_def* p_f
 }
 #endif
 
-#endif
-
-#ifndef OF
-#define OF(x) _Z_OF(x)
 #endif
