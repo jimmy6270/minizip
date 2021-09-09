@@ -42,6 +42,7 @@ endif()
 
 # create minizip library
 add_library(minizip ${MINIZIP_SRC} ${MINIZIP_PUBLIC_HEADERS})
+set_property(TARGET minizip PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 option(USE_AES "enables building of aes library" ON)
 if(USE_AES)
@@ -71,6 +72,7 @@ if(USE_AES)
     aes/sha1.h)
 
   add_library(aes ${AES_SRC} ${AES_PUBLIC_HEADERS})
+  set_property(TARGET aes PROPERTY POSITION_INDEPENDENT_CODE ON)
 
   set_target_properties(aes minizip
      PROPERTIES
