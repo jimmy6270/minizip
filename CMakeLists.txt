@@ -90,6 +90,9 @@ if(USE_AES)
     DESTINATION "include/minizip/aes")
 endif()
 
+# Looking for zlib.h
+include_directories("../zlib-ng/build/")
+
 install(TARGETS minizip EXPORT zlib-exports
   INCLUDES DESTINATION "include"
   RUNTIME DESTINATION "bin"
