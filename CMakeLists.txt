@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 
-# Set a consistent MACOSX_RPATH default across all CMake versions. 
+# Set a consistent MACOSX_RPATH default across all CMake versions.
 # When CMake 2.8.12 is required, change this default to 1.
 # When CMake 3.0.0 is required, remove this block (see CMP0042).
 if(NOT DEFINED CMAKE_MACOSX_RPATH)
@@ -46,7 +46,7 @@ set_property(TARGET minizip PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 option(USE_AES "enables building of aes library" ON)
 if(USE_AES)
-  set(AES_SRC 
+  set(AES_SRC
     aes/aescrypt.c
     aes/aeskey.c
     aes/aestab.c
@@ -57,7 +57,7 @@ if(USE_AES)
     aes/pwd2key.c
     aes/sha1.c)
 
-  set(AES_PUBLIC_HEADERS 
+  set(AES_PUBLIC_HEADERS
     aes/aes.h
     aes/aes_via_ace.h
     aes/aesopt.h
