@@ -3,5 +3,8 @@
 *.a
 *.o
 *.zip
+*.htm
+Backup
+Debug
 miniunz
 minizip
